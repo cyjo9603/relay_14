@@ -16,6 +16,7 @@
   "author": "John ahn",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/vision": "^2.1.1",
     "axios": "^0.19.2",
     "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",
@@ -37,7 +38,7 @@
     "request": "^2.88.2"
   },
   "devDependencies": {
-    "concurrently": "^5.2.0",
+    "concurrently": "^5.3.0",
     "nodemon": "^2.0.4"
   }
 }

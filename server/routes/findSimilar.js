@@ -6,11 +6,7 @@ const axios = require("axios");
 router.post("/", async (req, res) => {
   res.header("Access-Control-Allow-Origin", "*"); // 모든 도메인
   User.findOne({ name: req.body.name }, async (err, user) => {
-    if (!user)
-      return res.json({
-        isTherUser: false,
-        message: "No such user",
-      });
+    if (!user) return res.status(200).json({ success: true, user: [] });
 
     const targetUserImage = user.image;
     const searchingUserImage = req.body.image;
@@ -20,15 +16,16 @@ router.post("/", async (req, res) => {
     );
 
     if (verifyResult > 0.5) {
-      return res.json({ isThereResult: true, user: user });
+      res.status(200).json({ success: true, user: [user] });
     }
-    return res.json({ isThereResult: false });
+    return res.status(200).json({ success: true, user: [] });
   });
 });
 
 async function compareTwoUsers(url1, url2) {
   let result1 = undefined;
   let result2 = undefined;
+  let verifyResult = undefined;
   let subscriptionKey = "d0eb598e24a14411b5d155a32db16687";
   let endpoint =
     "https://koreacentral.api.cognitive.microsoft.com/face/v1.0/detect";
@@ -104,11 +101,12 @@ async function compareTwoUsers(url1, url2) {
       // console.log("Status text: " + response.statusText);
       // console.log();
       // console.log(response.data.confidence);
-      return response.data.confidence;
+      verifyResult = response.data.confidence;
     })
     .catch(function (error) {
       console.log(error);
     });
+  return verifyResult;
 }
 
 module.exports = router;
