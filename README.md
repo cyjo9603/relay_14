@@ -19,3 +19,5 @@
 - [수정 가이드](https://github.com/boostcamp-2020/relay_14/wiki/%EA%B8%B0%EB%8A%A5-A---%EC%88%98%EC%A0%95-%EA%B0%80%EC%9D%B4%EB%93%9C)
 
 ## 기능 B구현
+
+- [기능B 구현,배포](https://github.com/boostcamp-2020/relay_14/wiki/%EA%B8%B0%EB%8A%A5-B-%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84,-%EB%B0%B0%ED%8F%AC)
