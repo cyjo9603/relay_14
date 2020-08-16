@@ -1,0 +1,68 @@
+*{
+    box-sizing : border-box;
+  }
+  
+  .main{
+    display : flex;
+    flex-direction : column;
+    margin : 100px auto;
+    text-align : center;
+    position : relative;
+  }
+  
+  .main_title{
+    line-height : 1.3;
+    font-size : 36px;
+    font-weight : 600;
+  }
+  
+  .main_box{
+    margin-left : auto;
+    margin-right : auto;
+    background-color : white;
+    width : 500px;
+    height : 40px;
+    border : 1px solid #404040;
+    border-radius : 20px;
+    margin-top : 30px;
+    padding-left : 15px;
+    position : relative;
+    text-align : left;
+  }
+  
+  .main_input{
+    width : 85%;
+    height : 100%;
+    border : none;
+    outline: none; 
+    font-size : 14px;
+    color : black;
+  }
+  
+  .icon_box{
+    position : absolute;
+    right : 15px;
+    top : 0px;
+  }
+
+  .material-icons{
+    color : black;
+    font-size : 25px;
+  }
+
+  .mike_button{
+      margin-right : 7px;
+      cursor : pointer;
+      border : none;
+      background-color : transparent;
+  }
+  
+button{
+    cursor : pointer;
+    border : none;
+    background-color : transparent;
+  }
+  
+  
+  
+  

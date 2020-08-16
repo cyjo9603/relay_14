@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* Highlight */
+pre {
+  padding: 10px;
+  white-space: pre-wrap;
+  background-color: #333333;
+  color: white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.ql-editor {
+  min-height: 300px;
+}
+
+.app {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 700px;
+}
+
+.wrapper {
+  background-color : white;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+}
+
+.contentsWrap {
+  width : 100%;
+  position: relative;
+  max-width: 1200px; 
+  margin: 0px auto 0px;
+  padding: 16px 16px 50px;
+  box-sizing: border-box;
+  min-height: 83vh;
+}
+
+.contentsWrapSpacer {
+  height: 68px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .contentsWrapSpacer {
+    height: 50px;
+    display: block;
+  }
+}
+
+.input-feedback {
+  color: red;
+}
+
+/* =================================
+            Scroll-y 
+================================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10 px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.589);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(54, 56, 58);
+}
+
+#proj_title{
+  position: absolute;
+  color: white;
+  font-size: 30px;
+  bottom: 30px;
+  margin-left: 50px;
+}
+
+#uploadPDiv{
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+#landingImg{
+  filter:brightness(70%);
+  width:100%;
+  height:auto
+}
+
+@media(max-width: 768px){
+
+  #proj_title{
+    position: absolute;
+    color: black;
+    font-size: 23px;
+    margin-left: 20px;
+  }
+
+  #like {
+    align-items: center;
+    position: absolute;
+    left: 40%;
+    transform: translate(-40%,0);
+  }
+
+  #uploadPDiv{
+    max-width: 700px;
+    margin: 2rem 2rem;
+  }
+
+  #appMain{
+    padding-top: 60px !important;
+  }
+
+  #renderZone{
+    width: 90% !important;
+    margin: 1.2rem auto !important;
+  }
+
+  #landingImg{
+    display: inline;
+    height: auto;
+    width:100%;
+    resize: both;
+    left:50%;
+    top:0;
+   
+    filter:brightness(70%);
+    
+  }
+  #mainsection{
+    padding:40px 0 !important;
+    height: 200px !important;
+    width: 100%;
+  }
+
+  #landingBtn {
+    height: 40px !important;
+    margin-top: 5px;
+  }
+
+  .postPageDetail {
+    padding: 2rem 1rem !important;
+
+  }
+
+}
+
