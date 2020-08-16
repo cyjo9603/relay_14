@@ -20,4 +20,28 @@
 
 ## 기능 B구현
 
-- [기능B 구현,배포](https://github.com/boostcamp-2020/relay_14/wiki/%EA%B8%B0%EB%8A%A5-B-%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84,-%EB%B0%B0%ED%8F%AC)
+<br>
+
+### 데모 url
+
+[https://relay14-client.herokuapp.com/](https://relay14-client.herokuapp.com/)
+
+<br>
+
+### 기능 구현
+
+- [기능 B 구현1 - 유해한 이미지 필터링](https://github.com/boostcamp-2020/relay_14/wiki/%EA%B8%B0%EB%8A%A5-B-%EA%B5%AC%ED%98%841--%EC%9C%A0%ED%95%B4%ED%95%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%ED%95%84%ED%84%B0%EB%A7%81)
+- [기능 B 구현2 - 친구 찾기](https://github.com/boostcamp-2020/relay_14/wiki/%EA%B8%B0%EB%8A%A5-B-%EA%B5%AC%ED%98%842-%EC%B9%9C%EA%B5%AC-%EC%B0%BE%EA%B8%B0)
+- [기능 B 배포](https://github.com/boostcamp-2020/relay_14/wiki/%EA%B8%B0%EB%8A%A5-B-%EB%B0%B0%ED%8F%AC)
+
+<br>
+
+### 역할분담 및 소감
+
+| 배포                           | 백엔드                                         | 프론트엔드     |
+| ------------------------------ | ---------------------------------------------- | -------------- |
+| 이도경, 김덕현, 조민재, 유진우 | 심재익, 전경윤, 조항래, 장규영, 이진우, 김석기 | 이준희, 이진영 |
+
+<br>
+
+[기능 B 회고 및 소감](https://github.com/boostcamp-2020/relay_14/wiki/%EA%B8%B0%EB%8A%A5-B-%ED%9A%8C%EA%B3%A0-%EB%B0%8F-%EC%86%8C%EA%B0%90)
