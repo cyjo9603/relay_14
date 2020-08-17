@@ -3,17 +3,27 @@ import { FaCode } from 'react-icons/fa';
 import { Card, Avatar, Col, Typography, Row, Button } from 'antd';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import UserProfile from '../../modules/UserProfile/UserProfile';
 const { Title } = Typography;
 const { Meta } = Card;
 
 function YouKnowPage(props) {
   const [Users, setUsers] = useState([]);
+  const [SpecificUser, setSpecificUser] = useState({
+    name: '',
+    image: '',
+    email: '',
+    school: '',
+    company: '',
+    intro: '',
+  });
+  const [ModalVisible, setModalVisible] = useState(false);
+
   var image = 'https://static.wadiz.kr/main/media/img-fundingopen-pc@2x.3311937d.jpg';
   const user = useSelector((state) => state.user);
   const UserVariable = {
     userId: user,
   };
-  console.log('console.log(user);', props);
 
   useEffect(() => {
     if (user)
@@ -32,8 +42,22 @@ function YouKnowPage(props) {
 
   let friendsArray = [''];
 
-  const addFriend = (userData) => {
-    console.log(userData);
+  const offModal = () => {
+    setModalVisible(false);
+  };
+
+  const showFriend = (userData) => {
+    setModalVisible(true);
+    console.log(ModalVisible);
+    setSpecificUser({
+      name: userData.name,
+      image: userData.image,
+      email: userData.email,
+      school: userData.school,
+      company: userData.company,
+      intro: userData.intro,
+    });
+    console.log(userData._id);
   };
 
   //카드 css 동적 변경
@@ -55,7 +79,7 @@ function YouKnowPage(props) {
           <div
             style={cardStyle()}
             onClick={() => {
-              addFriend(users);
+              showFriend(users);
             }}
           >
             <div
@@ -84,6 +108,7 @@ function YouKnowPage(props) {
     });
     return (
       <div style={{ width: '100%', overflow: 'hidden' }}>
+        <UserProfile userData={SpecificUser} isVisible={ModalVisible} offModal={offModal} />
         <section
           id="mainsection"
           style={{
