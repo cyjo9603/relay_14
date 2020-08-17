@@ -1,54 +1,71 @@
-import React, { useEffect, useState } from "react";
-import { FaCode } from "react-icons/fa";
-import { Card, Avatar, Col, Typography, Row, Button } from "antd";
-import axios from "axios";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import { FaCode } from 'react-icons/fa';
+import { Card, Avatar, Col, Typography, Row, Button } from 'antd';
+import axios from 'axios';
+import { useSelector } from 'react-redux';
+import UserProfile from '../../modules/UserProfile/UserProfile';
 const { Title } = Typography;
 const { Meta } = Card;
 
 function FindResultPage(props) {
   const [Users, setUsers] = useState([]);
-  let image =
-    "https://static.wadiz.kr/main/media/img-fundingopen-pc@2x.3311937d.jpg";
+  const [SpecificUser, setSpecificUser] = useState({
+    name: '',
+    image: '',
+    email: '',
+    school: '',
+    company: '',
+    intro: '',
+  });
+  const [ModalVisible, setModalVisible] = useState(false);
+
+  let image = 'https://static.wadiz.kr/main/media/img-fundingopen-pc@2x.3311937d.jpg';
   let user = useSelector((state) => state.user.findData);
 
   if (user !== undefined) {
-    user = (user.user) ? user.user : [];
-  }
-  else {
-    props.history.push("/");
-    return (<div></div>);
+    user = user.user ? user.user : [];
+  } else {
+    props.history.push('/');
+    return <div></div>;
   }
 
-  console.log("=== === === ");
+  console.log('=== === === ');
   console.log(user);
 
   const UserVariable = {
     userId: user,
   };
-  console.log("console.log(user);", props);
+  console.log('console.log(user);', props);
 
-  let friendsArray = [""];
+  let friendsArray = [''];
 
-  const addFriend = (userData) => {
+  const showFriend = (userData) => {
+    setModalVisible(true);
+    console.log(ModalVisible);
+    setSpecificUser({
+      name: userData.name,
+      image: userData.image,
+      email: userData.email,
+      school: userData.school,
+      company: userData.company,
+      intro: userData.intro,
+    });
     console.log(userData._id);
+  };
+
+  const offModal = () => {
+    setModalVisible(false);
   };
 
   //카드 css 동적 변경
   let cardStyle = function () {
     if (true) {
       return {
-        marginBottom: "40px",
-        width: "180px",
+        marginBottom: '40px',
+        width: '180px',
         textAlign: `center`,
       };
     }
-    return {
-      border: `2px solid black`,
-      marginBottom: "40px",
-      width: "180px",
-      textAlign: `center`,
-    };
   };
 
   if (user.length != 0) {
@@ -59,31 +76,31 @@ function FindResultPage(props) {
           <div
             style={cardStyle()}
             onClick={() => {
-              addFriend(users);
+              showFriend(users);
             }}
           >
             <div
               style={{
-                position: "relative",
-                margin: "0px 10px",
-                width: "150px",
-                height: "150px",
-                overflow: "hidden",
-                border: "1px solid rgba(0,0,0,.2)",
-                borderRadius: "10px 10px",
+                position: 'relative',
+                margin: '0px 10px',
+                width: '150px',
+                height: '150px',
+                overflow: 'hidden',
+                border: '1px solid rgba(0,0,0,.2)',
+                borderRadius: '10px 10px',
               }}
             >
               <img
-                style={{ width: "100%", height: "100%", display: `inline` }}
+                style={{ width: '100%', height: '100%', display: `inline` }}
                 alt="thumbnail"
                 src={`${users.image}`}
               />
             </div>
             <div
               style={{
-                paddingLeft: "60px",
-                position: "relative",
-                bottom: "0px",
+                paddingLeft: '60px',
+                position: 'relative',
+                bottom: '0px',
               }}
             >
               <h3>{`${users.name}`}</h3>
@@ -93,20 +110,19 @@ function FindResultPage(props) {
       );
     });
     return (
-      <div style={{ width: "100%", overflow: "hidden" }}>
+      <div style={{ width: '100%', overflow: 'hidden' }}>
+        <UserProfile userData={SpecificUser} isVisible={ModalVisible} offModal={offModal} />
         <section
           id="mainsection"
           style={{
             backgroundImage: `url(${image})`,
-            padding: "60px 0px",
-            textAlign: "center",
-            height: "150px",
+            padding: '60px 0px',
+            textAlign: 'center',
+            height: '150px',
           }}
         >
           <a href="/upload">
-            <p style={{ color: "white", fontSize: "26px", margin: "0px" }}>
-              여러분이 찾는 친구
-            </p>
+            <p style={{ color: 'white', fontSize: '26px', margin: '0px' }}>여러분이 찾는 친구</p>
           </a>
         </section>
         <br />
@@ -119,20 +135,18 @@ function FindResultPage(props) {
   } else {
     //서버에서 전달된 데이터가 없을 경우
     return (
-      <div style={{ width: "100%", overflow: "hidden" }}>
+      <div style={{ width: '100%', overflow: 'hidden' }}>
         <section
           id="mainsection"
           style={{
             backgroundImage: `url(${image})`,
-            padding: "60px 0px",
-            textAlign: "center",
-            height: "150px",
+            padding: '60px 0px',
+            textAlign: 'center',
+            height: '150px',
           }}
         >
           <a href="/upload">
-            <p style={{ color: "white", fontSize: "26px", margin: "0px" }}>
-              여러분이 찾는 친구
-            </p>
+            <p style={{ color: 'white', fontSize: '26px', margin: '0px' }}>여러분이 찾는 친구</p>
           </a>
         </section>
         <br />
