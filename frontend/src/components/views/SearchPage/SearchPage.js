@@ -8,6 +8,7 @@ import axios from 'axios';
 import * as Yup from 'yup';
 import './SearchPage.css';
 import { useDispatch } from 'react-redux';
+import RecommandProfile from '../../modules/RecommanProfile/RecommandProfile';
 const { Title } = Typography;
 const { Meta } = Card;
 
@@ -39,15 +40,13 @@ function SearchPage(props) {
   //페이지내에서 재 검색 하기 위한 코드
   const [find, setfind] = useState(0);
   useEffect(() => {
-    axios
-      .post('https://relay14-server.herokuapp.com/api/users/searchUser', searchVariable)
-      .then((response) => {
-        if (response.data.success) {
-          setUsers(response.data.user);
-        } else {
-          alert('Failed to get User Data');
-        }
-      });
+    axios.post('https://relay14-server.herokuapp.com/api/users/searchUser', searchVariable).then((response) => {
+      if (response.data.success) {
+        setUsers(response.data.user);
+      } else {
+        alert('Failed to get User Data');
+      }
+    });
     //
   }, [find, searchVariable]);
 
@@ -72,16 +71,14 @@ function SearchPage(props) {
 
   //유저목록 받아오기
   useEffect(() => {
-    axios
-      .post('https://relay14-server.herokuapp.com/api/users/searchUser', searchVariable)
-      .then((response) => {
-        //console.log(response)
-        if (response.data.success) {
-          setUsers(response.data.user);
-        } else {
-          alert('Failed to get User Data');
-        }
-      });
+    axios.post('https://relay14-server.herokuapp.com/api/users/searchUser', searchVariable).then((response) => {
+      //console.log(response)
+      if (response.data.success) {
+        setUsers(response.data.user);
+      } else {
+        alert('Failed to get User Data');
+      }
+    });
     const userVariable = {
       userFrom: props.user.userData,
     };
@@ -174,9 +171,14 @@ function SearchPage(props) {
           </div>
         </form>
       </div>
-      <div class="people_main_box">
-        <p class="people_main_title">혹시, 너도 고였니?😉</p>
-        <div class="people_box">{renderCards}</div>
+      <div className="section-find-people">
+        <div class="people_main_box">
+          <p class="people_main_title">혹시, 너도 고였니?😉</p>
+          <div class="people_box">{renderCards}</div>
+        </div>
+        <aside className="section-find-recommand">
+          <RecommandProfile />
+        </aside>
       </div>
     </div>
   );
