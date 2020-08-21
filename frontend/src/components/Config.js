@@ -1,4 +1,4 @@
-export const BACK_SERVER_URL = 'https://relay14-server.herokuapp.com/'; //localhost
+export const BACK_SERVER_URL = 'https://boostcamp14.run.goorm.io/'; //localhost
 
 //////////////////////////// For Header Configs //////////////////////////////////
 const config = {

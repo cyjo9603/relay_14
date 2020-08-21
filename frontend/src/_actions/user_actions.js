@@ -4,7 +4,7 @@ import { BACK_SERVER_URL, headersConfig } from '../components/Config.js';
 
 export function registerUser(dataToSubmit) {
   const request = axios
-    .post(`https://relay14-server.herokuapp.com/api/users/register`, dataToSubmit)
+    .post(BACK_SERVER_URL + `api/users/register`, dataToSubmit)
     .then((response) => response.data);
 
   return {
@@ -15,7 +15,7 @@ export function registerUser(dataToSubmit) {
 
 export function loginUser(dataToSubmit) {
   const request = axios
-    .post(`https://relay14-server.herokuapp.com/api/users/login`, dataToSubmit)
+    .post(BACK_SERVER_URL + `api/users/login`, dataToSubmit)
     .then((response) => response.data);
 
   return {
@@ -26,7 +26,7 @@ export function loginUser(dataToSubmit) {
 
 export function auth() {
   const request = axios
-    .get(`https://relay14-server.herokuapp.com/api/users/auth`, headersConfig)
+    .get(BACK_SERVER_URL + `api/users/auth`, headersConfig)
     .then((response) => response.data);
 
   return {
@@ -37,7 +37,7 @@ export function auth() {
 
 export function logoutUser() {
   const request = axios
-    .get(`https://relay14-server.herokuapp.com/api/users/logout`, headersConfig)
+    .get(BACK_SERVER_URL + 'api/users/logout', headersConfig)
     .then((response) => response.data);
 
   return {
@@ -48,7 +48,7 @@ export function logoutUser() {
 
 export function findUserByPhoto(dataToSubmit) {
   const request = axios
-    .post('https://relay14-server.herokuapp.com/api/findsimilar', dataToSubmit)
+    .post(BACK_SERVER_URL + 'api/findsimilar', dataToSubmit)
     .then((response) => response.data);
 
   return {

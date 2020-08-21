@@ -1,1 +1,1 @@
-export const BACK_URL = 'https://relay14-server.herokuapp.com/'; //localhost
+export const BACK_URL = 'https://boostcamp14.run.goorm.io/'; //localhost

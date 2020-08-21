@@ -3,7 +3,7 @@ module.exports = function (app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'https://relay14-server.herokuapp.com/',
+      target: 'https://boostcamp14.run.goorm.io/',
       changeOrigin: true,
     })
   );
