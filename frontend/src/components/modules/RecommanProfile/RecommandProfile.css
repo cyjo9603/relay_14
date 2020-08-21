@@ -1,0 +1,16 @@
+.recommand-profile {
+  width: 160px;
+  border-radius: 20px !important ;
+  border: 1px solid #999999 !important;
+  cursor: pointer;
+  transition: box-shadow 0.5s;
+}
+
+.recommand-profile:hover {
+  box-shadow: 5px 5px 5px #bbbbbb;
+}
+
+.recommand-profile img {
+  margin: 10px auto;
+  width: 90%;
+}
